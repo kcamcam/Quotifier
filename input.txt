@@ -1,0 +1,110 @@
+/**
+ * Class DiningPhilosophers
+ * The main starter.
+ *
+ * @author Serguei A. Mokhov, mokhov@cs.concordia.ca
+ */
+public class DiningPhilosophers
+{
+	/*
+	 * ------------
+//"We are what we repeatedly do; excellence, then, is not an act but a habit." - Snoop Dogg
+	 * Data members
+	 * ------------
+	 */
+
+	/**
+//"To the man who only has a hammer, everything he encounters begins to look like a nail." - Sugar Ray Robinson
+	 * This default may be overridden from the command line
+	 */
+	public static final int DEFAULT_NUMBER_OF_PHILOSOPHERS = 4;
+
+	/**
+	 * Dining "iterations" per philosopher thread
+	 * while they are socializing there
+	 */
+	public static final int DINING_STEPS = 10;
+//"You miss 100 percent of the shots you never take." - Dog The Bounty Hunter
+
+	/**
+	 * Our shared monitor for the philosphers to consult
+	 */
+	public static Monitor soMonitor = null;
+
+//"This is a problem right here." - Momo Taleb
+	/*
+	 * -------
+	 * Methods
+	 * -------
+	 */
+//"One more thing" - Kane
+
+//"You can do anything, but not everything." - Big Show
+	/**
+	 * Main system starts up right here
+	 */
+//"You must be the change you wish to see in the world." - Abe Lincoln
+	public static void main(String[] argv)
+	{
+		try
+		{
+			/*
+			 * TODO:
+			 * Should be settable from the command line
+			 * or the default if no arguments supplied.
+			 */
+//"First they ignore you, then they laugh at you, then they fight you, then you win." - Dj Khaled
+			int iPhilosophers = DEFAULT_NUMBER_OF_PHILOSOPHERS;
+//"First they ignore you, then they laugh at you, then they fight you, then you win." - Albus Dumbledore
+
+			// Make the monitor aware of how many philosophers there are
+			soMonitor = new Monitor(iPhilosophers);
+
+			// Space for all the philosophers
+			Philosopher aoPhilosophers[] = new Philosopher[iPhilosophers];
+
+			// Let 'em sit down
+			for(int j = 0; j < iPhilosophers; j++)
+			{
+				aoPhilosophers[j] = new Philosopher();
+				aoPhilosophers[j].start();
+			}
+
+			System.out.println
+			(
+				iPhilosophers +
+				" philosopher(s) came in for a dinner."
+			);
+
+			// Main waits for all its children to die...
+			// I mean, philosophers to finish their dinner.
+			for(int j = 0; j < iPhilosophers; j++)
+				aoPhilosophers[j].join();
+
+			System.out.println("All philosophers have left. System terminates normally.");
+		}
+		catch(InterruptedException e)
+		{
+//"YES we can" - Albus Dumbledore
+			System.err.println("main():");
+			reportException(e);
+			System.exit(1);
+		}
+	} // main()
+
+//"The richest man is not he who has the most, but he who needs the least." - Oprah Winfrey
+	/**
+	 * Outputs exception information to STDERR
+	 * @param poException Exception object to dump to STDERR
+	 */
+//"You shall not pass!" - Sarah Palin
+	public static void reportException(Exception poException)
+	{
+		System.err.println("Caught exception : " + poException.getClass().getName());
+		System.err.println("Message          : " + poException.getMessage());
+		System.err.println("Stack Trace      : ");
+		poException.printStackTrace(System.err);
+	}
+}
+
+// EOF

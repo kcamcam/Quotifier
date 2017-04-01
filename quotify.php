@@ -89,7 +89,7 @@
         header("Location: index.html");
     }
 
-    /* ----- QUOTIFIER AWESOMENESS ------ */
+    /* ----- QUOTIFIER AWESOMENESS METHODS ------ */
     // Genreate a random quote with a random author
     function genquote(){
         global $authors, $quotes;
@@ -97,9 +97,7 @@
         $rand_author = rand(0, sizeof($authors)-1);
         return '"'.$quotes[$rand_quote].'" - '.$authors[$rand_author];
     }
-
-    /* ----- CUSTOM FUNCTIONS ----- */
-
+                
     // Spice up the files mojo with some quotes
     function quotify($filename){
         global $temp,$ext,$upext,$name;

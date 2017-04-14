@@ -4,17 +4,17 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 	<!--META DATA -->
-	<title>Quotifier</title>
+	<title>quotifier.ca</title>
 	<link rel="icon" type="image/png" href="doublequotes.png"/>
 	<meta name="author" content="Kevin Camellini">
 	<meta name="description" content="Comment your code with random quotes.">
-    <meta name="keywords" content="comments, quotes, code, github, bootstrap, software, develoeper, gandhi">
+    <meta name="keywords" content="comments, fun quotes, code, github, bootstrap, software, develoeper, gandhi">
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- FontAwesome -->
     <script src="https://use.fontawesome.com/e0af25fb51.js"></script>
     <!-- Custom Style Sheet -->
-    <link href="css/style2.css" rel="stylesheet" type="text/css">
+    <link href="css/style4.css" rel="stylesheet" type="text/css">
 </head>
 <body onload="setYear()">
 	<!-- Content -->
@@ -25,12 +25,13 @@
                 <h1>&#8220 Quotifer &#8221</h1>
                 <p>Because regular comments are too mainstream.</p>
                 <h4>What it does</h4>
-                <p>Quotifier adds random quotes to your code. Using breakthroughs in machine learning and big data, it is able to generate fake quotes. It is also smart enough to know how the comment should be formatted for the file type you picked.</p>
+                <p>Quotifier adds random quotes to your code. Using breakthroughs in machine learning and big data, it is able to generate fake quotes. It is also smart enough to know how the comment should be formatted for the uploaded file type.</p>
                 <!-- Examples -->
-                <h4>This code will produce beautiful gems such as:</h4>
-                <pre><code>#"It's local on the the remote server" - Soulja Boy</code><br/><code>#"Those were alternative facts" - Undertaker</code><br/><code>#"An eye for eye only ends up making the whole world blind." - Operah Winfrey</code></pre>
+                <h4>This code will produce beautiful gems like:</h4>
+				<pre id="quote"><code>//"It's local on the the remote server" - Soulja Boy</code><br/><br/><code>//"Those were alternative facts" - Undertaker</code><br/><br/><code>//"An eye for eye only ends up making the whole world blind." - Oprah Winfrey</code><br/><br/></pre>
+				<button class="btn btn-primary" onclick="genquote()">Quote++</button>
                 <!-- File Formats -->
-                <h4>Supported formats:</h4>
+                <h4>Supported file formats:</h4>
 				<ul>
 					<li>.rb</li>
 					<li>.java</li>
@@ -48,6 +49,7 @@
 			<div class="row-fluid">
                 <form action="quotify.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
                     <h4>Select a file to upload:</h4>
+                    <p>Don't worry, nothing will happen to the original.</p>
                     <!-- Add File -->
                     <label class="btn btn-success fileinput-button" for="file-upload">Add File...</label>
                     <input type="file" style="display:none;" name="fileToUpload" id="file-upload">
@@ -82,6 +84,7 @@
 	<!-- Bootstrap JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Custom Scripts -->
-	<script type="text/javascript" src="script/script.js"></script>
+	<script type="text/javascript" src="data.json"></script>
+	<script type="text/javascript" src="script/script14.js"></script>
 </body>
 </html>

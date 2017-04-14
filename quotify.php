@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <!--META DATA -->
-    <title>Quotifier</title>
+    <title>quotifier.ca</title>
     <link rel="icon" type="image/png" href="doublequotes.png"/>
     <meta name="author" content="Kevin Camellini">
     <meta name="description" content="Comment your code with random quotes.">
-    <meta name="keywords" content="comments, quotes, code, github, bootstrap, software, develoeper, gandhi">
+    <meta name="keywords" content="comments, fun quotes, code, github, bootstrap, software, develoeper, gandhi">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!-- FontAwesome -->
     <script src="https://use.fontawesome.com/e0af25fb51.js"></script>
     <!-- Custom Style Sheet -->
-    <link href="css/style2.css" rel="stylesheet" type="text/css">
+    <link href="css/style4.css" rel="stylesheet" type="text/css">
 </head>
 <body onload="setYear()">
     <!-- Body -->
@@ -23,12 +23,15 @@
             <div class="row-fluid">
 <?php
     /* ----- QUOTIFIER VARIABLES ------ */
-    $jsonfile = file_get_contents("db.json");
-    $jsonshiz = json_decode($jsonfile, true);
-    $authors = $jsonshiz['authors'];
-    $quotes = $jsonshiz['quotes'];
-    $ext = $jsonshiz['fileext'];
-
+    $smajsonFile = file_get_contents("data.json");
+    // First line of data.json containts "data =", not valid json
+    $lines = explode("\n", $smajsonFile);
+    // Remove first line
+    $smajsonFile = implode("\n", array_slice($lines, 1));
+    $smajsonShiz = json_decode($smajsonFile, true);
+    $authors = $smajsonShiz['authors'];
+    $quotes = $smajsonShiz['quotes'];
+    $ext = $smajsonShiz['fileext'];
     /* ----- FILE VARIABLES ------ */
     $submitvalue = $_POST['submit'];
     $temp = $_FILES['fileToUpload']['tmp_name'];
@@ -97,10 +100,11 @@
         $rand_author = rand(0, sizeof($authors)-1);
         return '"'.$quotes[$rand_quote].'" - '.$authors[$rand_author];
     }
-                
+
     // Spice up the files mojo with some quotes
     function quotify($filename){
         global $temp,$ext,$upext,$name;
+        //chmod -R 777 input.txt
         $openfile = fopen($filename, "w+") or die("Unable to open file..");
         $opentemp = fopen($temp, "r") or die("Unable to open file..");
         $fullfile = "";
@@ -199,6 +203,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">
     </script>
     <!-- Custom Scripts -->
-    <script type="text/javascript" src="script/script.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="script/script14.js"></script>
 </body>
 </html>

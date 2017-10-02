@@ -191,7 +191,7 @@
             </div>
             <div class="row-fluid famingo">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0 0;">
-                    <p class="text-muted"><a href="https://www.famingolabs.com" target="_blank">&copy; <span id="yearFooter"></span> Famingo Labs Inc.</a> All rights reserved.</p>
+                    <p class="text-muted"><a href="http://www.famingolabs.com" target="_blank">&copy; <span id="yearFooter"></span> Famingo Labs Inc.</a> All rights reserved.</p>
                 </div>
             </div>
         </div>

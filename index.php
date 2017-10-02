@@ -61,10 +61,10 @@
 			</div>
 		</div>
 	</div>
-	<!-- Footer -->
-	<div class="footer text-center">
+    <!-- Footer -->
+    <div class="footer text-center">
         <div class="container-fluid">
-			<div class="row-fluid social">
+            <div class="row-fluid social">
                 <a href="https://twitter.com/famingolabs" target="_blank">
                     <span class="fa fa-twitter"></span>
                 </a>
@@ -73,12 +73,12 @@
                 </a>
             </div>
             <div class="row-fluid famingo">
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0 0;">
-                    <p class="text-muted"><a href="https://www.famingolabs.com" target="_blank">&copy; <span id="yearFooter"></span> Famingo Labs Inc.</a> All rights reserved.</p>
-				</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 0 0;">
+                    <p class="text-muted"><a href="http://www.famingolabs.com" target="_blank">&copy; <span id="yearFooter"></span> Famingo Labs Inc.</a> All rights reserved.</p>
+                </div>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
 	<!-- jQuery JavaScript -->
 	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 	<!-- Bootstrap JavaScript -->

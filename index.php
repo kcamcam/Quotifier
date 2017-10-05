@@ -21,43 +21,50 @@
 	<div class="landing">
 		<div class="container-fluid">
 			<div class="row-fluid">
-                <!-- Title -->
-                <h1>&#8220 Quotifer &#8221</h1>
-                <p>Because regular comments are too mainstream.</p>
-                <h4>What it does</h4>
-                <p>Quotifier adds random quotes to your code. Using breakthroughs in machine learning and big data, it is able to generate fake quotes. It is also smart enough to know how the comment should be formatted for the uploaded file type.</p>
-                <!-- Examples -->
-                <h4>This code will produce beautiful gems like:</h4>
-				<pre id="quote"><code>//"It's local on the the remote server" - Soulja Boy</code><br/><br/><code>//"Those were alternative facts" - Undertaker</code><br/><br/><code>//"An eye for eye only ends up making the whole world blind." - Oprah Winfrey</code><br/><br/></pre>
-				<button class="btn btn-primary" onclick="genquote()">Quote++</button>
-                <!-- File Formats -->
-                <h4>Supported file formats:</h4>
-				<ul>
-					<li>.rb</li>
-					<li>.java</li>
-					<li>.py</li>
-					<li>.cpp</li>
-					<li>.tex</li>
-					<li>.js</li>
-					<li>.o</li>
-					<li>.swift</li>
-					<li>.json</li>
-                    <li>.php</li>
-				</ul>
+				<div class="col-xs-12">
+					<!-- Title -->
+					<h1>&#8220; Quotifer &#8221;</h1>
+					<!-- Description -->
+					<p>Because regular comments are too mainstream.</p>
+	                <h4>What it does</h4>
+	                <p>Quotifier adds random quotes to your code. Using breakthroughs in machine learning and big data, it is able to generate fake quotes. It is also smart enough to know how the comment should be formatted for the uploaded file type.</p>
+				</div>
+				<div class="col-xs-12">
+					<!-- Examples -->
+					<h4>This code will produce beautiful gems like:</h4>
+					<pre id="quote"><code>//"It's local on the the remote server" - Soulja Boy</code><br/><br/><code>//"Those were alternative facts" - Undertaker</code><br/><br/><code>//"An eye for eye only ends up making the whole world blind." - Oprah Winfrey</code><br/><br/></pre>
+					<button class="btn btn-primary" onclick="genquote()">Quote++</button>
+	                <!-- File Formats -->
+	                <h4>Supported file formats:</h4>
+					<ul>
+						<li>.rb</li>
+						<li>.java</li>
+						<li>.py</li>
+						<li>.cpp</li>
+						<li>.tex</li>
+						<li>.js</li>
+						<li>.o</li>
+						<li>.swift</li>
+						<li>.json</li>
+	                    <li>.php</li>
+					</ul>
+				</div>
 			</div>
             <!-- Buttons -->
 			<div class="row-fluid">
-                <form action="quotify.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
-                    <h4>Select a file to upload:</h4>
-                    <p>Don't worry, nothing will happen to the original.</p>
-                    <!-- Add File -->
-                    <label class="btn btn-success fileinput-button" for="file-upload">Add File...</label>
-                    <input type="file" style="display:none;" name="fileToUpload" id="file-upload">
-                    <!-- Quotify -->
-                    <input type="submit" name="submit" class="btn btn-primary start" value="Quotify" disabled>
-                    <!-- Boringify -->
-                    <input type="submit" name="submit" class="btn btn-danger start" value="Boringify" disabled>
-				</form>
+				<div class="col-xs-12">
+	                <form action="quotify.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
+	                    <h4>Select a file to upload:</h4>
+	                    <p>Don't worry, nothing will happen to the original.</p>
+	                    <!-- Add File -->
+	                    <label class="btn btn-success fileinput-button" for="file-upload">Add File...</label>
+	                    <input type="file" style="display:none;" name="fileToUpload" id="file-upload">
+	                    <!-- Quotify -->
+	                    <input type="submit" name="submit" class="btn btn-primary start" value="Quotify" disabled>
+	                    <!-- Boringify -->
+	                    <input type="submit" name="submit" class="btn btn-danger start" value="Boringify" disabled>
+					</form>
+				</div>
 			</div>
 		</div>
 	</div>

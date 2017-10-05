@@ -25,5 +25,5 @@ Here is an example [total_freakdown.py](https://github.com/kcamcam/quotifier/blo
 
 Take a look at the mid-semster spur of the moment hackathon the lead to the [original quotifier python script](https://github.com/jusleg/quotifier)  
 
-![img](http://i.imgur.com/zh9dgZu.jpg)
+![dr evil gif](drevil.gif)
 

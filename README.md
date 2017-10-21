@@ -1,5 +1,5 @@
 # Quotifier
-Because reugular comments are too mainstream.
+Because regular comments are too mainstream.
 
 ## What it does
 

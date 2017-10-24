@@ -60,16 +60,18 @@
         if (!$extensionexists){
           echo "<h4>Only the following formats are supported:</h4>
             <ul>
-              <li>.rb</li>
-              <li>.java</li>
-              <li>.py</li>
-              <li>.cpp</li>
-              <li>.tex</li>
-              <li>.js</li>
-              <li>.o</li>
-              <li>.swift</li>
-              <li>.json</li>
-              <li>.php</li>
+							<li>.rb</li>
+							<li>.java</li>
+							<li>.py</li>
+							<li>.cpp</li>
+							<li>.tex</li>
+							<li>.js</li>
+							<li>.o</li>
+							<li>.swift</li>
+							<li>.json</li>
+							<li>.php</li>
+							<li>.html</li>
+							<li>.css</li>
             </ul>";
           $uploadOk = 0;
         }

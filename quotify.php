@@ -58,36 +58,38 @@
                 $extensionexists = true;
         }
         if (!$extensionexists){
-            echo "<h4>Only the following formats are supported:</h4>				
-                    <ul>
-                        <li>.rb</li>
-                        <li>.java</li>
-                        <li>.py</li>
-                        <li>.cpp</li>
-                        <li>.tex</li>
-                        <li>.js</li>
-                        <li>.o</li>
-                        <li>.swift</li>
-                        <li>.json</li>
-                        <li>.php</li>
-                    </ul>";
-            $uploadOk = 0;
+          echo "<h4>Only the following formats are supported:</h4>
+            <ul>
+							<li>.rb</li>
+							<li>.java</li>
+							<li>.py</li>
+							<li>.cpp</li>
+							<li>.tex</li>
+							<li>.js</li>
+							<li>.o</li>
+							<li>.swift</li>
+							<li>.json</li>
+							<li>.php</li>
+							<li>.html</li>
+							<li>.css</li>
+            </ul>";
+          $uploadOk = 0;
         }
 
         // Check if $uploadOk is set to 0 by an error
         if ($uploadOk == 0) {
-            echo "
-                <h4>Your file was not uploaded..</h4>
-                <a type=\"button\" class=\"btn btn-warning \" href=\"http://quotifier.ca\">
-                    <span class=\"glyphicon glyphicon-triangle-left\" aria-hidden=\"true\"></span> Back
-                </a>";
+          echo "
+            <h4>Your file was not uploaded..</h4>
+            <a type=\"button\" class=\"btn btn-warning \" href=\"http://quotifier.ca\">
+              <span class=\"glyphicon glyphicon-triangle-left\" aria-hidden=\"true\"></span> Back
+            </a>";
         }
         // if everything is ok, quotify the file
         else if ($submitvalue == "Quotify")
-                quotify($myfile);
+          quotify($myfile);
         // if everything is ok, boringify the file
         else if ($submitvalue == "Boringify")
-                boringify($myfile);
+          boringify($myfile);
     }else{
         header("Location: index.html");
     }
@@ -95,47 +97,55 @@
     /* ----- QUOTIFIER AWESOMENESS METHODS ------ */
     // Genreate a random quote with a random author
     function genquote(){
-        global $authors, $quotes;
-        $rand_quote = rand(0, sizeof($quotes)-1);
-        $rand_author = rand(0, sizeof($authors)-1);
-        return '"'.$quotes[$rand_quote].'" - '.$authors[$rand_author];
+      global $authors, $quotes;
+      $rand_quote = rand(0, sizeof($quotes)-1);
+      $rand_author = rand(0, sizeof($authors)-1);
+      return '"'.$quotes[$rand_quote].'" - '.$authors[$rand_author];
     }
 
     // Spice up the files mojo with some quotes
     function quotify($filename){
-        global $temp,$ext,$upext,$name;
-        //chmod -R 777 input.txt
-        $openfile = fopen($filename, "w+") or die("Unable to open file..");
-        $opentemp = fopen($temp, "r") or die("Unable to open file..");
-        $fullfile = "";
-        $counter = 0;
+      global $temp,$ext,$upext,$name;
+      //chmod -R 777 input.txt
+      $openfile = fopen($filename, "w+") or die("Unable to open file..");
+      $opentemp = fopen($temp, "r") or die("Unable to open file..");
+      $fullfile = "";
+      $counter = 0;
 
-        while(!feof($opentemp)) {
-            $line = fgets($opentemp);
-            $counter++;
-            $fullfile = $fullfile."".$line;
-            $random = rand(5,15);
-            if( fmod($counter,$random)  == 0)
-                $fullfile = $fullfile.$ext[$upext].genquote()."\n";
-        }
-        echo "<h4>Your New(better) File: </h4>";
-        echo "<a type=\"button\" class=\"btn btn-info fileinput-button\" href=\"input.txt\" download=$name>
-                    <span class=\"glyphicon glyphicon-download-alt\" aria-hidden=\"true\"></span> Download Commented File
-                </a>
-                <br/><br/>
-                <pre>";
-        foreach(preg_split("/((\r?\n)|(\r\n?))/", $fullfile) as $l){
-            echo "</code>".$l."</code><br/>";
-        }
+      while(!feof($opentemp)) {
+        $line = fgets($opentemp);
+        $counter++;
+        $fullfile = $fullfile."".$line;
+        $random = rand(5,15);
+        if( fmod($counter,$random)  == 0){
+					/* Support for HTML, adds the closing tag */
+					if($upext==html)
+						$fullfile = $fullfile.$ext[$upext].genquote()."-->\n";
+					/* Support for CSS, adds the closing tag */
+					else if($upext==css)
+						$fullfile = $fullfile.$ext[$upext].genquote()."*/\n";
+					else
+						$fullfile = $fullfile.$ext[$upext].genquote()."\n";
+				}
+    	}
+      echo "<h4>Your New(better) File: </h4>";
+      echo "<a type=\"button\" class=\"btn btn-info fileinput-button\" href=\"input.txt\" download=$name>
+                  <span class=\"glyphicon glyphicon-download-alt\" aria-hidden=\"true\"></span> Download Commented File
+              </a>
+              <br/><br/>
+              <pre>";
+      foreach(preg_split("/((\r?\n)|(\r\n?))/", $fullfile) as $l){
+          echo "</code>".$l."</code><br/>";
+      }
 
-        echo "</pre>
-                <a type=\"button\" class=\"btn btn-warning\" href=\"http://quotifier.ca\">
-                    <span class=\"glyphicon glyphicon-triangle-left\"></span> Back
-                </a>";
-        fwrite($openfile,$fullfile);
-        fclose($openfile);
-        fclose($opentemp);
-    }
+      echo "</pre>
+              <a type=\"button\" class=\"btn btn-warning\" href=\"http://quotifier.ca\">
+                  <span class=\"glyphicon glyphicon-triangle-left\"></span> Back
+              </a>";
+      fwrite($openfile,$fullfile);
+      fclose($openfile);
+      fclose($opentemp);
+		}
 
     // Make the file hella boring by removing quotes
     function boringify($filename){
@@ -145,7 +155,8 @@
         $fullfile = "";
         while(!feof($opentemp)) {
             $line = fgets($opentemp);
-            if((substr($line,0,2) != ($ext[$upext]."\"")) && (substr($line,0,3) != ($ext[$upext]."\"")))
+						/* Check if substring 0-5 is a double quote, don't write it if it is */
+            if((substr($line,0,2) != ($ext[$upext]."\"")) && (substr($line,0,3) != ($ext[$upext]."\"")) && (substr($line,0,4) != ($ext[$upext]."\"")) && (substr($line,0,5) != ($ext[$upext]."\"")))
                 $fullfile = $fullfile."".$line;
         }
         echo "<h4>Your New(boring) File: </h4>";

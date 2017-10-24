@@ -46,23 +46,25 @@
 						<li>.o</li>
 						<li>.swift</li>
 						<li>.json</li>
-	                    <li>.php</li>
+            <li>.php</li>
+						<li>.html</li>
+						<li>.css</li>
 					</ul>
 				</div>
 			</div>
             <!-- Buttons -->
 			<div class="row-fluid">
 				<div class="col-xs-12">
-	                <form action="quotify.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
-	                    <h4>Select a file to upload:</h4>
-	                    <p>Don't worry, nothing will happen to the original.</p>
-	                    <!-- Add File -->
-	                    <label class="btn btn-success fileinput-button" for="file-upload">Add File...</label>
-	                    <input type="file" style="display:none;" name="fileToUpload" id="file-upload">
-	                    <!-- Quotify -->
-	                    <input type="submit" name="submit" class="btn btn-primary start" value="Quotify" disabled>
-	                    <!-- Boringify -->
-	                    <input type="submit" name="submit" class="btn btn-danger start" value="Boringify" disabled>
+					<form action="quotify.php" method="post" enctype="multipart/form-data" class="myform" id="myform">
+            <h4>Select a file to upload:</h4>
+            <p>Don't worry, the origial remains untouched.</p>
+            <!-- Add File -->
+            <label class="btn btn-success fileinput-button" for="file-upload">Add File...</label>
+            <input type="file" style="display:none;" name="fileToUpload" id="file-upload">
+            <!-- Quotify -->
+            <input type="submit" name="submit" class="btn btn-primary start" value="Quotify" disabled>
+            <!-- Boringify -->
+            <input type="submit" name="submit" class="btn btn-danger start" value="Boringify" disabled>
 					</form>
 				</div>
 			</div>

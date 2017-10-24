@@ -1,4 +1,4 @@
-db = 
+db =
 {
   "authors":[
     "Ivanka Trump"
@@ -95,5 +95,7 @@ db =
     ,"php":"//"
     ,"txt":">"
     ,"rtf":">"
+		,"html":"<!--"
+		,"css":"/*"
   }
 }

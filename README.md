@@ -1,3 +1,4 @@
+> Now supports HTML and CSS
 # Quotifier
 Because regular comments are too mainstream.
 

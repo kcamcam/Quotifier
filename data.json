@@ -26,9 +26,10 @@ db =
     ,"The Red Power Ranger"
     ,"Oprah Winfrey"
     ,"Snoop Dogg"
+    ,"Gucci Mane"
   ]
   ,"quotes":[
-    ,"There is no cloud. It's just someone elses computer."  
+    "There is no cloud. It's just someone elses computer."  
     ,"A quiet and modest life brings more joy than a pursuit of success bound with constant unrest."
     ,"The ode lives upon the ideal, the epic upon the grandiose, the drama upon the real."
     ,"If we don't study the mistakes of the future we're doomed to repeat them for the first time."
@@ -82,6 +83,7 @@ db =
     ,"Chronological awareness."
     ,"This is a problem right here."
     ,"Get two birds stoned at once."
+    ,"If a man does not have sauce, then he is lost... "
   ]
   ,"fileext":{
     "java":"//"

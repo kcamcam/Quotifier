@@ -95,5 +95,13 @@
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="data.json"></script>
 	<script type="text/javascript" src="script/script15.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-108009963-4"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-108009963-4');
+	</script>
 </body>
 </html>

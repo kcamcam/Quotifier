@@ -94,6 +94,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Custom Scripts -->
 	<script type="text/javascript" src="data.json"></script>
-	<script type="text/javascript" src="script/script14.js"></script>
+	<script type="text/javascript" src="script/script15.js"></script>
 </body>
 </html>
